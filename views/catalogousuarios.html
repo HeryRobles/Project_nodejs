@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Catalogo de Usuarios </h1>
+    <table border="1px">
+        <tr>
+          <th>Codigo del usuario</th>
+          <th>Nombre del usuario</th>
+          <th>Primer apellido del usuario</th>
+          <th>Segundo apellido del usuario</th>
+        </tr>
+        {% for usuario in usuarios %}
+        <tr>
+          <td>
+            {{usuario[0]}}
+          </td>
+          <td>
+            {{ usuario[1] }}
+          </td>
+    
+          <td>
+            ${{ usuario[2] }}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    
+</body>
+</html>
