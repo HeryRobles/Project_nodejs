@@ -28,12 +28,12 @@ function executeQuery(query) {
 }
 
 export function getUsersData() {
-  const query = "SELECT id_usuario, nombre_usuario, ap1_usuario, ap2_usuario, contraseña_usuario FROM usuarios";
+  const query = "SELECT id_usuario, nombre_usuario, ap1_usuario, ap2_usuario FROM usuarios";
   return executeQuery(query);
 }
 
 export function getClientesData() {
-  const query = "SELECT id_usuario, nombre_usuario, ap1_usuario, ap2_usuario, email, contraseña_usuario FROM clientes";
+  const query = "SELECT id_cliente, nombre_cliente, ap1_cliente, ap2_cliente, email FROM clientes";
   return executeQuery(query);
 }
 

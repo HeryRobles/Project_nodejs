@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Usuarios</title>
 </head>
+
 <body>
-    <h1>Catalogo de Usuarios </h1>
-    <table border="1px">
-        <tr>
-          <th>Codigo del usuario</th>
-          <th>Nombre del usuario</th>
-          <th>Primer apellido del usuario</th>
-          <th>Segundo apellido del usuario</th>
-        </tr>
-        {% for usuario in usuarios %}
-        <tr>
-          <td>
-            {{usuario[0]}}
-          </td>
-          <td>
-            {{ usuario[1] }}
-          </td>
-    
-          <td>
-            ${{ usuario[2] }}
-          </td>
-        </tr>
-        {% endfor %}
-      </table>
-    
+  <nav>
+    <ul>
+        <li><a href="/cp">Productos</a></li>
+        <li><a href="/cu">Usuarios</a></li>
+        <li><a href="/cc">Clientes</a></li>
+    </ul>
+  </nav>
+  <div>
+    <h1>Catálogo de Usuarios</h1>
+
+    <table border="2px">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido paterno</th>
+                <th>Apellido materno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% usuarios.forEach(usuario => { %>
+                <tr>
+                    <td><%= usuario.id_usuario %></td>
+                    <td><%= usuario.nombre_usuario %></td>
+                    <td><%= usuario.ap1_usuario %></td>
+                    <td><%= usuario.ap2_usuario %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+  </div> 
 </body>
+
 </html>

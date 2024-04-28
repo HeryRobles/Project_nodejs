@@ -31,10 +31,10 @@ const server = createServer((req, res) => {
         res.end();
       }
     });
-  } else if (req.url === '/catalogoUsuarios') {
+  } else if (req.url === '/cu') {
     getUsersData()
-      .then(users => {
-        ejs.renderFile('views/catalogousuarios.html', { users }, (err, str) => {
+      .then(usuarios => {
+        ejs.renderFile('views/catalogousuarios.html', { usuarios }, (err, str) => {
           if (err) {
             console.error(err);
             res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -50,7 +50,7 @@ const server = createServer((req, res) => {
         res.writeHead(500, { 'Content-Type': 'text/plain' });
         res.end('An error occurred');
       });
-  } else if (req.url === '/catalogoProductos') {
+  } else if (req.url === '/cp') {
     getProductosData()
       .then(productos => {
         ejs.renderFile('views/catalogoproductos.html', { productos }, (err, str) => {
@@ -69,7 +69,7 @@ const server = createServer((req, res) => {
         res.writeHead(500, { 'Content-Type': 'text/plain' });
         res.end('An error occurred');
       });
-  } else if (req.url === '/catalogoClientes') {
+  } else if (req.url === '/cc') {
     getClientesData()
       .then(clientes => {
         ejs.renderFile('views/catalogoclientes.html', { clientes }, (err, str) => {
@@ -105,3 +105,4 @@ const server = createServer((req, res) => {
 server.listen(3000, '127.0.0.1', () => {
   console.log('Listening on 127.0.0.1:3000');
 });
+

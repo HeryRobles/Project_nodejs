@@ -3,34 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Productos</title>
 </head>
 <body>
-    <a href="/cp">Productos</a>
-    <a href="/cu">Usuarios</a>
-    <a href="/cc">Clientes</a>
-    <h1>Catalogo de Productos </h1>
-    <table border="1px">
-        <tr>
-          <th>Codigo del Producto</th>
-          <th>Nombre del Producto</th>
-          <th>Precio del Producto</th>
-        </tr>
-        {% for producto in productos %}
-        <tr>
-          <td>
-            {{producto[0]}}
-          </td>
-          <td>
-            {{ producto[1] }}
-          </td>
-    
-          <td>
-            ${{ producto[2] }}
-          </td>
-        </tr>
-        {% endfor %}
-      </table>
-    
+  <nav>
+    <ul>
+        <li><a href="/cp">Productos</a></li>
+        <li><a href="/cu">Usuarios</a></li>
+        <li><a href="/cc">Clientes</a></li>
+    </ul>
+  </nav>
+
+  <div>
+    <h1>Catalogo de Productos</h1>
+
+    <table border="2px">
+        <thead>
+            <tr>
+                <th>Codigo del Producto</th>
+                <th>Nombre del Producto</th>
+                <th>Precio del Producto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% productos.forEach(producto => { %>
+            <tr>
+                <td><%= producto.id %></td>
+                <td><%= producto.nombre %></td>
+                <td><%= producto.precio %></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
 </body>
+
 </html>
